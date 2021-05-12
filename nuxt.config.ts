@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -17,7 +15,9 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: [
+    '@/assets/variables.scss'
+  ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
@@ -29,8 +29,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    'nuxt-windicss',
+    '@nuxtjs/composition-api/module',
+    'nuxt-purge-icons-module',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -41,6 +42,8 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/sitemap',
+		'@nuxtjs/robots',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -49,30 +52,72 @@ export default {
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
 
-  // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    treeShake: true,
-    defaultAssets: false,
-    icons: {
-      iconfont: 'mdiSvg',
+  /*
+	 ** Build configuration
+	 ** See https://nuxtjs.org/api/configuration-build/
+	 */
+	build: {
+		extractCSS: {
+			ignoreOrder: true,
+		},
+		optimization: {
+			splitChunks: {
+				cacheGroups: {
+					styles: {
+						name: 'styles',
+						test: /\.(css|vue|scss)$/,
+						chunks: 'all',
+						enforce: true,
+					},
+				},
+			},
+		},
+  },
+  sitemap: {
+		hostname: 'https://pictorial.netlify.app/',
+		gzip: true,
+		trailingSlash: true,
+	},
+	pwa: {
+		manifest: {
+			name: 'Nuxt Template',
+			lang: 'en',
+			theme_color: '#fff',
+		},
+		meta: {
+			lang: 'en',
+			ogSiteName: 'Nuxt JS',
+			ogTitle: 'Nuxt WindiCSS',
+			author: 'Lakshya Singh',
+		},
+	},
+	generate: {
+		crawler: true,
+    fallback: true,
+    interval: 2000
+	},
+	robots: {
+		UserAgent: '*',
+		Allow: '*',
+  },
+  windicss: {
+    scan: {
+      dirs: ['./'],
+      exclude: [
+        'node_modules',
+        'dist',
+        '.git',
+        '.github',
+        '.nuxt'
+      ],
     },
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
+    preflight: {
+      alias: {
+        // add nuxt aliases
+        'nuxt-link': 'a',
+        // @nuxt/image module
+        'nuxt-img': 'img',
       },
     },
   },
-
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
 }

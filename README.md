@@ -4,16 +4,23 @@ Nuxt Template for quick setup and getting started.
 
 ## Dependecies Include
 
+- nuxt
 - @nuxt/content
 - @nuxt/axios
-- @nuxtjs/vuetify
+- nuxt-windicss
 - @nuxtjs/pwa
-- @mdi/js
+- @nuxtjs/sitemap
+- @nuxtjs/robots
+- @nuxtjs/typescript-build
+- @nuxtjs/composition-api
+- nuxt-purge-icons-module
+- sass
 
 ## Formatter and Linter
 
 - prettier
 - eslint
+- husky
 
 ### Typescript is supported and app is in PWA mode
 

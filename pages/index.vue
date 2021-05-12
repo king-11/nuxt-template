@@ -1,93 +1,123 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
+  <section class="container mx-auto text-center px-4">
+    <header>
+      <aside class="text-center flex justify-evenly py-4">
         <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
+        <windi-css-logo />
+      </aside>
+      <h1 class="text-center text-2xl py-2">
+        Welcome to the WindiCSS + Nuxt.js template
+        <a href="https://github.com/king-11/Nuxt-template" target="_blank" rel="noopener noreferrer" aria-label="Github Repo">
+          <span class="iconify inline-block w-8 h-8" data-icon="carbon:logo-github" />
+        </a>
+      </h1>
+    </header>
+    <section>
+      <h2 class="text-xl">
+        Installed Packages
+      </h2>
+      <transition-group appear tag="ul" class="list-none grid my-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 container mx-auto items-center">
+        <li v-for="name in modules" :key="name" class="p-2 shadow-md my-2">
+          {{ name }}
+        </li>
+      </transition-group>
+    </section>
+    <article>
+      <div>
+        <p class="py-2">
+          Windi CSS is a next-generation utility-first CSS framework.
+          Windi CSS is an on-demanded alternative to Tailwind, which provides faster load times, fully compatible with Tailwind v2.0 and with a bunch of additional cool features.
+        </p>
+        <address>
           <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
+            For more information on WindiCSS, check out the
             <a
-              href="https://vuetifyjs.com"
+              href="https://windicss.org/guide/"
               target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation </a
-            >.
+              rel="noopener noreferrer">
+              documentation </a>.
           </p>
           <p>
             If you have questions, please join the official
             <a
-              href="https://chat.vuetifyjs.com/"
+              href="https://chat.windicss.com/"
               target="_blank"
               rel="noopener noreferrer"
-              title="chat"
-            >
-              discord </a
-            >.
+              title="chat">
+              discord </a>.
           </p>
           <p>
             Find a bug? Report it on the github
             <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
+              href="https://github.com/windicss/windicss/issues"
               target="_blank"
               rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
+              title="contribute">
+              issue board </a>.
           </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+        </address>
+        <blockquote>
+          Thank you for developing with WindiCSS and I look forward to bringing
+          more exciting features in the future.
+          <em><small>&mdash; Voorjar</small></em>
+        </blockquote>
+      </div>
+    </article>
+    <address>
+      <hr class="my-3">
+      <a
+        href="https://nuxtjs.org/"
+        target="_blank"
+        rel="noopener noreferrer">
+        Nuxt Documentation
+      </a>
+      <br>
+      <a
+        href="https://github.com/nuxt/nuxt.js"
+        target="_blank"
+        rel="noopener noreferrer">
+        Nuxt GitHub
+      </a>
+    </address>
+    <nuxt-link to="/inspire">
+      <span class="iconify w-8 h-8 mx-auto" data-icon="la:code" />
+    </nuxt-link>
+  </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import Logo from '@/components/Logo'
+import WindiCssLogo from '@/components/WindiCSS'
 
 export default {
   components: {
     Logo,
-    VuetifyLogo,
+    WindiCssLogo,
   },
+  data() {
+    return {
+      modules: [
+        'Nuxt WindiCSS',
+        'Nuxt PWA',
+        'Nuxt Robots',
+        'Nuxt SiteMap',
+        'Nuxt Content',
+        'Nuxt Typescript',
+        'Nuxt Composition API',
+        'Nuxt Purge Icons',
+        'Nuxt Axios',
+        'ESLint',
+        'Prettier',
+        'Husky',
+        'Sass'
+      ]
+    }
+  }
 }
 </script>
+
+<style lang="scss">
+a {
+  @apply text-cyan-600;
+}
+</style>

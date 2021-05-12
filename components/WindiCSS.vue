@@ -1,5 +1,5 @@
 <template>
-  <img class="VuetifyLogo" alt="Vuetify Logo" src="/vuetify-logo.svg" />
+  <img src="https://next.windicss.org/assets/logo.svg" alt="Windi CSS Logo" height="120" width="120">
 </template>
 
 <style>
