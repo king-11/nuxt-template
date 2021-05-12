@@ -7,16 +7,36 @@
       </aside>
       <h1 class="text-center text-2xl py-2">
         Welcome to the WindiCSS + Nuxt.js template
-        <a href="https://github.com/king-11/Nuxt-template" target="_blank" rel="noopener noreferrer" aria-label="Github Repo">
-          <span class="iconify inline-block w-8 h-8" data-icon="carbon:logo-github" />
+        <a
+          href="https://github.com/king-11/Nuxt-template"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Github Repo"
+        >
+          <span
+            class="iconify inline-block w-8 h-8"
+            data-icon="carbon:logo-github"
+          />
         </a>
       </h1>
     </header>
     <section>
-      <h2 class="text-xl">
-        Installed Packages
-      </h2>
-      <transition-group appear tag="ul" class="list-none grid my-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 container mx-auto items-center">
+      <h2 class="text-xl">Installed Packages</h2>
+      <transition-group
+        appear
+        tag="ul"
+        class="
+          list-none
+          grid
+          my-8
+          md:grid-cols-2
+          lg:grid-cols-3
+          xl:grid-cols-4
+          container
+          mx-auto
+          items-center
+        "
+      >
         <li v-for="name in modules" :key="name" class="p-2 shadow-md my-2">
           {{ name }}
         </li>
@@ -25,8 +45,10 @@
     <article>
       <div>
         <p class="py-2">
-          Windi CSS is a next-generation utility-first CSS framework.
-          Windi CSS is an on-demanded alternative to Tailwind, which provides faster load times, fully compatible with Tailwind v2.0 and with a bunch of additional cool features.
+          Windi CSS is a next-generation utility-first CSS framework. Windi CSS
+          is an on-demanded alternative to Tailwind, which provides faster load
+          times, fully compatible with Tailwind v2.0 and with a bunch of
+          additional cool features.
         </p>
         <address>
           <p>
@@ -34,8 +56,10 @@
             <a
               href="https://windicss.org/guide/"
               target="_blank"
-              rel="noopener noreferrer">
-              documentation </a>.
+              rel="noopener noreferrer"
+            >
+              documentation </a
+            >.
           </p>
           <p>
             If you have questions, please join the official
@@ -43,8 +67,10 @@
               href="https://chat.windicss.com/"
               target="_blank"
               rel="noopener noreferrer"
-              title="chat">
-              discord </a>.
+              title="chat"
+            >
+              discord </a
+            >.
           </p>
           <p>
             Find a bug? Report it on the github
@@ -52,8 +78,10 @@
               href="https://github.com/windicss/windicss/issues"
               target="_blank"
               rel="noopener noreferrer"
-              title="contribute">
-              issue board </a>.
+              title="contribute"
+            >
+              issue board </a
+            >.
           </p>
         </address>
         <blockquote>
@@ -64,18 +92,16 @@
       </div>
     </article>
     <address>
-      <hr class="my-3">
-      <a
-        href="https://nuxtjs.org/"
-        target="_blank"
-        rel="noopener noreferrer">
+      <hr class="my-3" />
+      <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer">
         Nuxt Documentation
       </a>
-      <br>
+      <br />
       <a
         href="https://github.com/nuxt/nuxt.js"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+      >
         Nuxt GitHub
       </a>
     </address>
@@ -109,10 +135,10 @@ export default {
         'ESLint',
         'Prettier',
         'Husky',
-        'Sass'
-      ]
+        'Sass',
+      ],
     }
-  }
+  },
 }
 </script>
 

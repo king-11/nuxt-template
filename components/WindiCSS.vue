@@ -1,5 +1,10 @@
 <template>
-  <img src="https://next.windicss.org/assets/logo.svg" alt="Windi CSS Logo" height="120" width="120">
+  <img
+    src="https://next.windicss.org/assets/logo.svg"
+    alt="Windi CSS Logo"
+    height="120"
+    width="120"
+  />
 </template>
 
 <style>

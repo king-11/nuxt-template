@@ -15,9 +15,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '@/assets/variables.scss'
-  ],
+  css: ['@/assets/variables.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
@@ -43,7 +41,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/sitemap',
-		'@nuxtjs/robots',
+    '@nuxtjs/robots',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -53,63 +51,57 @@ export default {
   content: {},
 
   /*
-	 ** Build configuration
-	 ** See https://nuxtjs.org/api/configuration-build/
-	 */
-	build: {
-		extractCSS: {
-			ignoreOrder: true,
-		},
-		optimization: {
-			splitChunks: {
-				cacheGroups: {
-					styles: {
-						name: 'styles',
-						test: /\.(css|vue|scss)$/,
-						chunks: 'all',
-						enforce: true,
-					},
-				},
-			},
-		},
+   ** Build configuration
+   ** See https://nuxtjs.org/api/configuration-build/
+   */
+  build: {
+    extractCSS: {
+      ignoreOrder: true,
+    },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue|scss)$/,
+            chunks: 'all',
+            enforce: true,
+          },
+        },
+      },
+    },
   },
   sitemap: {
-		hostname: 'https://pictorial.netlify.app/',
-		gzip: true,
-		trailingSlash: true,
-	},
-	pwa: {
-		manifest: {
-			name: 'Nuxt Template',
-			lang: 'en',
-			theme_color: '#fff',
-		},
-		meta: {
-			lang: 'en',
-			ogSiteName: 'Nuxt JS',
-			ogTitle: 'Nuxt WindiCSS',
-			author: 'Lakshya Singh',
-		},
-	},
-	generate: {
-		crawler: true,
+    hostname: 'https://pictorial.netlify.app/',
+    gzip: true,
+    trailingSlash: true,
+  },
+  pwa: {
+    manifest: {
+      name: 'Nuxt Template',
+      lang: 'en',
+      theme_color: '#fff',
+    },
+    meta: {
+      lang: 'en',
+      ogSiteName: 'Nuxt JS',
+      ogTitle: 'Nuxt WindiCSS',
+      author: 'Lakshya Singh',
+    },
+  },
+  generate: {
+    crawler: true,
     fallback: true,
-    interval: 2000
-	},
-	robots: {
-		UserAgent: '*',
-		Allow: '*',
+    interval: 2000,
+  },
+  robots: {
+    UserAgent: '*',
+    Allow: '*',
   },
   windicss: {
     scan: {
       dirs: ['./'],
-      exclude: [
-        'node_modules',
-        'dist',
-        '.git',
-        '.github',
-        '.nuxt'
-      ],
+      exclude: ['node_modules', 'dist', '.git', '.github', '.nuxt'],
     },
     preflight: {
       alias: {
