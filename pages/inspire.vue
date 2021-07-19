@@ -1,7 +1,13 @@
 <template>
   <section>
     <figure class="flex flex-col items-center my-8">
-      <img src="/vite.svg" alt="ViteJS" class="mb-5" width="200" height="200" />
+      <img
+        src="~/static/vite.svg"
+        alt="ViteJS"
+        class="mb-5"
+        width="200"
+        height="200"
+      />
       <blockquote class="blockquote">
         &#8220;First, solve the problem. Then, write the code.&#8221;
         <footer>

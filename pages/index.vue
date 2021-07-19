@@ -112,8 +112,8 @@
 </template>
 
 <script>
-import Logo from '@/components/Logo'
-import WindiCssLogo from '@/components/WindiCSS'
+import Logo from '@/components/Logo.vue'
+import WindiCssLogo from '@/components/WindiCSS.vue'
 
 export default {
   components: {
