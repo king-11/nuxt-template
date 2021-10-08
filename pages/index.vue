@@ -106,7 +106,7 @@
       </a>
     </address>
     <nuxt-link to="/inspire">
-      <span class="iconify w-8 h-8 mx-auto" data-icon="la:code" />
+      <i-c-code class="w-8 h-8 mx-auto" />
     </nuxt-link>
   </section>
 </template>
@@ -114,11 +114,13 @@
 <script>
 import Logo from '@/components/Logo.vue'
 import WindiCssLogo from '@/components/WindiCSS.vue'
+import ICCode from '~icons/ic/outline-code'
 
 export default {
   components: {
     Logo,
     WindiCssLogo,
+    ICCode,
   },
   data() {
     return {

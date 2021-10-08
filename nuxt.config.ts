@@ -29,7 +29,12 @@ export default {
     '@nuxt/typescript-build',
     'nuxt-windicss',
     '@nuxtjs/composition-api/module',
-    'nuxt-purge-icons-module',
+    [
+      'unplugin-icons/nuxt',
+      {
+        autoInstall: true,
+      },
+    ],
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
